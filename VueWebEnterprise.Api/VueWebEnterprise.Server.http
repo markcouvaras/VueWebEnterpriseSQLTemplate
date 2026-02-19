@@ -1,6 +1,0 @@
-@VueWebEnterprise.Api_HostAddress = http://localhost:5038
-
-GET {{VueWebEnterprise.Api_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

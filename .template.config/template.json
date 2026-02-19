@@ -14,7 +14,7 @@
     "language": "C#",
     "type": "solution"
   },
-  "sourceName": "VueWebEnterprise",
+  "sourceName": "VueWebEnterpriseSQL",
   "preferNameDirectory": true,
   "symbols": {
     "IncludeDatabase": {
@@ -27,8 +27,8 @@
       "type": "derived",
       "valueSource": "name",
       "valueTransform": "lowerCase",
-      "replaces": "vuewebenterprise",
-      "fileRename": "vuewebenterprise"
+      "replaces": "vuewebenterprisesql",
+      "fileRename": "vuewebenterprisesql"
     }
   },
   "sources": [
@@ -49,7 +49,7 @@
         {
           "condition": "(!IncludeDatabase)",
           "exclude": [
-            "VueWebEnterprise.Infrastructure/**"
+            "VueWebEnterpriseSQL.Infrastructure/**"
           ]
         }
       ]
@@ -57,7 +57,7 @@
   ],
   "primaryOutputs": [
     {
-      "path": "VueWebEnterprise.sln"
+      "path": "VueWebEnterpriseSQL.sln"
     }
   ],
   "postActions": [

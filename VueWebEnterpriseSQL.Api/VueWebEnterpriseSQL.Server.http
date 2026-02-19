@@ -1,0 +1,6 @@
+@VueWebEnterpriseSQL.Api_HostAddress = http://localhost:5038
+
+GET {{VueWebEnterpriseSQL.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

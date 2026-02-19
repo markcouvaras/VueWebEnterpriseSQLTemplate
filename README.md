@@ -85,7 +85,7 @@ dotnet new vwe-sql-app -n YourProjectName -o YourProjectName
 This will:
 
 1. Create a new folder called `YourProjectName`.
-2. Copy all template files into it, replacing every occurrence of `VueWebEnterprise` with `YourProjectName` (folder names, file names, namespaces, project references, etc.).
+2. Copy all template files into it, replacing every occurrence of `VueWebEnterpriseSQL` with `YourProjectName` (folder names, file names, namespaces, project references, etc.).
 3. Automatically run `dotnet restore` to pull down NuGet packages.
 
 ### Example
@@ -152,7 +152,7 @@ Api --> Infrastructure --> Application --> Domain
 
 ### Project Deep Dive
 
-#### VueWebEnterprise.Domain (The Core)
+#### VueWebEnterpriseSQL.Domain (The Core)
 
 The "Heart" of your business. It has **NO dependencies** on any other project. It doesn't know about databases, APIs, or JSON.
 
@@ -164,7 +164,7 @@ The "Heart" of your business. It has **NO dependencies** on any other project. I
 - **Exceptions:** `InsufficientFundsException.cs` — custom error logic.
 - **Domain Events:** `OrderCompletedEvent.cs` — triggers for logic.
 
-#### VueWebEnterprise.Application (The Brain)
+#### VueWebEnterpriseSQL.Application (The Brain)
 
 The "Orchestrator." It defines **what** the system can do. It holds the business rules but not the technical implementation.
 
@@ -176,7 +176,7 @@ The "Orchestrator." It defines **what** the system can do. It holds the business
 - **Services / Use Cases:** `UserService.cs` — the logic: "Check rules, then save."
 - **Mappings:** `MappingProfile.cs` — AutoMapper rules to convert Entities to DTOs.
 
-#### VueWebEnterprise.Infrastructure (The Toolbelt)
+#### VueWebEnterpriseSQL.Infrastructure (The Toolbelt)
 
 The "Implementation." It connects your clean Application to the real world (databases, files, 3rd-party APIs).
 
@@ -188,7 +188,7 @@ The "Implementation." It connects your clean Application to the real world (data
 - **Templates:** `Templates/Email/Welcome.html`, `Templates/Pdf/Invoice.html`.
 - **External Clients:** `StripePaymentClient.cs` — code that talks to Stripe.
 
-#### VueWebEnterprise.Api (The Mouth)
+#### VueWebEnterpriseSQL.Api (The Mouth)
 
 The "Entry Point." It translates HTTP requests into Application calls.
 
@@ -887,7 +887,7 @@ dotnet new uninstall ./VueWebEnterpriseSQLTemplate
 | ----------- | ---------------------------------- |
 | Identity    | `MyTemplate.Architecture.SqlServer`|
 | Short Name  | `vwe-sql-app`                      |
-| Source Name | `VueWebEnterprise`                  |
+| Source Name | `VueWebEnterpriseSQL`                  |
 | Type        | Solution                           |
 | Language    | C#                                 |
 

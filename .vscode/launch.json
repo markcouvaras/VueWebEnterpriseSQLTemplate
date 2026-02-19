@@ -6,9 +6,9 @@
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "build",
-      "program": "${workspaceFolder}/VueWebEnterprise.Api/bin/Debug/net10.0/VueWebEnterprise.Api.dll",
+      "program": "${workspaceFolder}/VueWebEnterpriseSQL.Api/bin/Debug/net10.0/VueWebEnterpriseSQL.Api.dll",
       "args": [],
-      "cwd": "${workspaceFolder}/VueWebEnterprise.Api",
+      "cwd": "${workspaceFolder}/VueWebEnterpriseSQL.Api",
       "stopAtEntry": false,
       "serverReadyAction": {
         "action": "openExternally",
@@ -19,14 +19,14 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "sourceFileMap": {
-        "/Views": "${workspaceFolder}/VueWebEnterprise.Api/Views"
+        "/Views": "${workspaceFolder}/VueWebEnterpriseSQL.Api/Views"
       }
     },
     {
       "name": "Launch Vue App",
       "type": "node",
       "request": "launch",
-      "cwd": "${workspaceFolder}/vuewebenterprise.client",
+      "cwd": "${workspaceFolder}/vuewebenterprisesql.client",
       "runtimeExecutable": "npm",
       "runtimeArgs": [
         "run",
@@ -40,7 +40,7 @@
       "request": "launch",
       "name": "Open Browser (Chrome)",
       "url": "https://localhost:5173", 
-      "webRoot": "${workspaceFolder}/vuewebenterprise.client"
+      "webRoot": "${workspaceFolder}/vuewebenterprisesql.client"
     }
   ],
   "compounds": [
