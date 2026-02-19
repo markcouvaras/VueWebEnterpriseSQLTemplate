@@ -55,6 +55,11 @@
       ]
     }
   ],
+  "primaryOutputs": [
+    {
+      "path": "VueWebEnterprise.sln"
+    }
+  ],
   "postActions": [
     {
       "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",

@@ -57,8 +57,12 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 // --- HANGFIRE DASHBOARD (Start) ---
-// This creates the UI at /hangfire
-app.UseHangfireDashboard();
+// Only enable if Hangfire was registered (requires SQL Server to be running).
+// Hangfire is skipped when SQL Server is unreachable — see Infrastructure/DependencyInjection.cs
+if (app.Services.GetService<IBackgroundJobClient>() is not null)
+{
+    app.UseHangfireDashboard();
+}
 
 app.MapControllers();
 
