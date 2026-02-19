@@ -106,6 +106,70 @@ Contoso/
   contoso.client/
 ```
 
+## Configure Secrets
+
+The template uses [.NET User Secrets](https://learn.microsoft.com/en-us/aspnet/core/security/app-secrets) to keep sensitive configuration out of source control.
+
+```bash
+cd YourProjectName.Api
+dotnet user-secrets init
+```
+
+Then set the secrets for your environment:
+
+```bash
+# Database (SQL Server)
+dotnet user-secrets set "ConnectionStrings:DefaultConnection" "Server=your-server;Database=YourProjectName;User Id=sa;Password=your-password;TrustServerCertificate=True"
+
+# Azure AD
+dotnet user-secrets set "AzureAd:TenantId"     "your-tenant-id"
+dotnet user-secrets set "AzureAd:ClientId"      "your-client-id"
+dotnet user-secrets set "AzureAd:Domain"        "your-domain.onmicrosoft.com"
+
+# Email (SMTP)
+dotnet user-secrets set "MailSettings:Host"      "smtp.office365.com"
+dotnet user-secrets set "MailSettings:Port"      "587"
+dotnet user-secrets set "MailSettings:Username"  "noreply@yourdomain.com"
+dotnet user-secrets set "MailSettings:Password"  "your-password"
+```
+
+**Useful commands:**
+
+```bash
+dotnet user-secrets list                                          # View all secrets
+dotnet user-secrets remove "ConnectionStrings:DefaultConnection"  # Remove one
+dotnet user-secrets clear                                         # Remove all
+```
+
+Alternatively, you can edit the secrets file directly. It's located at:
+
+```
+%APPDATA%\Microsoft\UserSecrets\<UserSecretsId>\secrets.json
+```
+
+Example `secrets.json`:
+
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=your-server;Database=YourProjectName;User Id=sa;Password=your-password;TrustServerCertificate=True"
+  },
+  "AzureAd": {
+    "TenantId": "your-tenant-id",
+    "ClientId": "your-client-id",
+    "Domain": "your-domain.onmicrosoft.com"
+  },
+  "MailSettings": {
+    "Host": "smtp.office365.com",
+    "Port": "587",
+    "Username": "noreply@yourdomain.com",
+    "Password": "your-password"
+  }
+}
+```
+
+> **Important:** Never commit real credentials to source control. User Secrets are stored locally and are not included in the repository.
+
 ## Template Options
 
 | Parameter           | Type | Default | Description                                              |
