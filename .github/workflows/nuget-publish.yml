@@ -24,7 +24,7 @@ jobs:
         run: |
           dotnet pack MyTemplatePack.csproj \
             --configuration Release \
-            -p:PackageVersion=2.6.${{ github.run_number }} \
+            -p:PackageVersion=1.0.${{ github.run_number }} \
             --output ./nupkgs
 
       - name: Push to GitHub Packages

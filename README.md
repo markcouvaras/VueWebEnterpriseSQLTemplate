@@ -52,7 +52,7 @@ dotnet nuget update source "GitHub_Enterprise" `
 ### 4. Install the Template
 
 ```powershell
-dotnet new install VueWebEnterpriseSQL.Template --version "2.6.*" --nuget-source "GitHub_Enterprise"
+dotnet new install VueWebEnterpriseSQL.Template --version "1.0.*" --nuget-source "GitHub_Enterprise"
 ```
 
 ### From a Local Clone
