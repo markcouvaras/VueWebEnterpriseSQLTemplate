@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Mark Couvaras",
+  "classifications": [
+    "Web",
+    "API",
+    "Vue",
+    "Clean Architecture"
+  ],
+  "identity": "MyTemplate.Architecture.SqlServer",
+  "name": "Vue Web Enterprise Architecture (SQL Server)",
+  "shortName": "vwe-sql-app",
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "sourceName": "VueWebEnterprise",
+  "preferNameDirectory": true,
+  "symbols": {
+    "IncludeDatabase": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true",
+      "description": "Include the Infrastructure project with EF Core / database support."
+    },
+    "lowerCaseName": {
+      "type": "derived",
+      "valueSource": "name",
+      "valueTransform": "lowerCase",
+      "replaces": "vuewebenterprise",
+      "fileRename": "vuewebenterprise"
+    }
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "exclude": [
+            "**/.git/**",
+            "**/.gitattributes",
+            "**/bin/**",
+            "**/obj/**",
+            "**/.vs/**",
+            "MyTemplatePack.csproj",
+            "README.md",
+            "**/Logs/**"
+          ]
+        },
+        {
+          "condition": "(!IncludeDatabase)",
+          "exclude": [
+            "VueWebEnterprise.Infrastructure/**"
+          ]
+        }
+      ]
+    }
+  ],
+  "postActions": [
+    {
+      "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+      "condition": "true",
+      "description": "Restore NuGet packages required by this project",
+      "manualInstructions": [
+        {
+          "text": "Run 'dotnet restore'"
+        }
+      ],
+      "continueOnError": true
+    }
+  ]
+}
